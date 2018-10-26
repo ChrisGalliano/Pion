@@ -13,3 +13,4 @@ http-client.private.env.json
 
 
 /vendor/
+composer.phar
