@@ -1,6 +1,7 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
     <PHPCodeStyleSettings>
+      <option name="INDENT_CODE_IN_PHP_TAGS" value="true" />
       <option name="ALIGN_KEY_VALUE_PAIRS" value="true" />
       <option name="ALIGN_PHPDOC_PARAM_NAMES" value="true" />
       <option name="ALIGN_PHPDOC_COMMENTS" value="true" />
@@ -38,7 +39,7 @@
       <option name="METHOD_PARAMETERS_WRAP" value="1" />
       <option name="METHOD_PARAMETERS_LPAREN_ON_NEXT_LINE" value="true" />
       <option name="METHOD_PARAMETERS_RPAREN_ON_NEXT_LINE" value="true" />
-      <option name="METHOD_CALL_CHAIN_WRAP" value="2" />
+      <option name="METHOD_CALL_CHAIN_WRAP" value="5" />
       <option name="BINARY_OPERATION_SIGN_ON_NEXT_LINE" value="true" />
       <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
       <option name="ARRAY_INITIALIZER_WRAP" value="5" />
