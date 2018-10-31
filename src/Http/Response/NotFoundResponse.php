@@ -1,8 +1,8 @@
 <?
   declare(strict_types=1);
-  
+
   namespace Pion\Http\Response;
-  
+
   use Pion\Http\Response\Headers\Headers;
   use Pion\Http\Response\Headers\HeadersInterface;
   use Pion\Http\Response\Status\StatusInterface;
@@ -16,12 +16,12 @@
     {
       return new StatusOK();
     }
-    
+
     public function headers(): HeadersInterface
     {
       return new Headers();
     }
-    
+
     public function stream(): StreamInterface
     {
       return new Stream('404 page not found');

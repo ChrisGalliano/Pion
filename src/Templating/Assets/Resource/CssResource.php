@@ -1,8 +1,8 @@
 <?
   declare(strict_types=1);
-  
+
   namespace Pion\Templating\Assets\Resource;
-  
+
   use Pion\Templating\Assets\Resource\Path\ResourcePathInterface;
 
   final class CssResource implements ResourceInterface
@@ -12,7 +12,8 @@
      */
     private $path;
 
-    public function __construct(ResourcePathInterface $path) {
+    public function __construct(ResourcePathInterface $path)
+    {
       $this->path = $path;
     }
 

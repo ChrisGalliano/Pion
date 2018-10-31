@@ -1,8 +1,8 @@
 <?
   declare(strict_types=1);
-  
+
   namespace Pion\Templating\Assets\Resource\Exceptions;
-  
+
   final class InvalidResourcePathException extends \Exception
   {
     public function __construct(string $path)

@@ -6,5 +6,5 @@
 
   interface ResourcePathInterface
   {
-    public function get() : string;
+    public function get(): string;
   }

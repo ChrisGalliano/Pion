@@ -1,8 +1,8 @@
 <?
   declare(strict_types=1);
-  
+
   namespace Pion\Actions\Resolver\Argument\Value;
-  
+
   use Pion\Actions\Resolver\Argument\Metadata\ArgumentMetadataInterface;
   use Pion\Http\Request\Method\RequestMethodInterface;
   use Pion\Http\Request\Parameters\ParametersInterface;
@@ -14,12 +14,12 @@
      * @var \Pion\Http\Request\RequestInterface
      */
     private $request;
-    
+
     public function __construct(RequestInterface $request)
     {
       $this->request = $request;
     }
-    
+
     public function isSupported(ArgumentMetadataInterface $metadata): bool
     {
       $isSupported = false;
@@ -31,7 +31,7 @@
       }
       return $isSupported;
     }
-    
+
     public function value(ArgumentMetadataInterface $metadata)
     {
       $value = $this->getValue($metadata, $this->request->get());
@@ -40,20 +40,20 @@
       }
       return $value;
     }
-    
+
     private function getValue(ArgumentMetadataInterface $metadata, ParametersInterface $parameters)
     {
       $value = null;
       if ($parameters->has($metadata->name())) {
         $value = $parameters->require($metadata->name());
         if ($metadata->type()->isArray()) {
-          $value = (array) $value;
+          $value = (array)$value;
         } else if ($metadata->type()->isBoolean()) {
-          $value = (bool) $value;
+          $value = (bool)$value;
         } else if ($metadata->type()->isFloat()) {
-          $value = (float) $value;
+          $value = (float)$value;
         } else if ($metadata->type()->isInt()) {
-          $value = (int) $value;
+          $value = (int)$value;
         }
       }
       return $value;

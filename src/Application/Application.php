@@ -1,8 +1,8 @@
 <?
   declare(strict_types=1);
-  
+
   namespace Pion\Application;
-  
+
   use Pion\Actions\Resolver\ActionResolver;
   use Pion\Application\Exceptions\UndefinedRouteException;
   use Pion\Http\Request\RequestInterface;
@@ -16,24 +16,24 @@
      * @var \Pion\Routing\RoutingInterface
      */
     private $routing;
-  
+
     /**
      * @var \Pion\Actions\Resolver\ActionResolver
      */
     private $actionResolver;
-  
+
     /**
      * @var \Pion\Templating\Engine\Engine
      */
     private $engine;
-  
+
     public function __construct(RoutingInterface $routing, ActionResolver $actionResolver, Engine $engine)
     {
       $this->routing = $routing;
       $this->actionResolver = $actionResolver;
       $this->engine = $engine;
     }
-  
+
     /**
      * @return \Pion\Http\Response\ResponseInterface
      * @throws \ReflectionException

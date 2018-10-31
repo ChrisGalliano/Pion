@@ -12,11 +12,13 @@
      */
     private $path;
 
-    public function __construct(ResourcePathInterface $path) {
+    public function __construct(ResourcePathInterface $path)
+    {
       $this->path = $path;
     }
 
-    public function render() : string {
+    public function render(): string
+    {
       return '<script type="text/javascript" src="' . $this->path->get() . '"></script>';
     }
   }

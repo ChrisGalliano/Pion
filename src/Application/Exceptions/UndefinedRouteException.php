@@ -1,8 +1,8 @@
 <?
   declare(strict_types=1);
-  
+
   namespace Pion\Application\Exceptions;
-  
+
   use Pion\Http\Request\RequestInterface;
 
   final class UndefinedRouteException extends \Exception

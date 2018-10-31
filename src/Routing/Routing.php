@@ -1,8 +1,8 @@
 <?
   declare(strict_types=1);
-  
+
   namespace Pion\Routing;
-  
+
   use Pion\Http\Request\RequestInterface;
   use Pion\Routing\Route\RouteInterface;
 
@@ -12,12 +12,12 @@
      * @var \Pion\Routing\Route\RouteInterface[]
      */
     private $routes;
-    
+
     public function __construct(RouteInterface... $routes)
     {
       $this->routes = $routes;
     }
-    
+
     public function get(RequestInterface $request): ?RouteInterface
     {
       $result = null;

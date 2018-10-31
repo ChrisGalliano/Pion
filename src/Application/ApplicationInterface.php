@@ -1,8 +1,8 @@
 <?
   declare(strict_types=1);
-  
+
   namespace Pion\Application;
-  
+
   use Pion\Http\Request\RequestInterface;
   use Pion\Http\Response\ResponseInterface;
 
