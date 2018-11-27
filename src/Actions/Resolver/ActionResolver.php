@@ -60,7 +60,8 @@
             throw new UnresolvedArgumentException($argumentReflection->getName());
           }
 
-          if ($value !== null && $argumentMetadata->type()->name() !== \gettype($value)) {
+          $compareType = \is_object($value) ? \get_class($value) : \gettype($value);
+          if ($value !== null && $argumentMetadata->type()->name() !== $compareType) {
             throw new InvalidArgumentTypeException(
               $argumentMetadata->type()->name(),
               \gettype($value)
