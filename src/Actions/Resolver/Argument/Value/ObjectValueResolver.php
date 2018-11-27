@@ -20,7 +20,10 @@
     public function isSupported(ArgumentMetadataInterface $metadata): bool
     {
       return $metadata->type()->isObject()
-             && is_subclass_of($metadata->type()->name(), \get_class($this->origin));
+             && (
+               $metadata->type()->name() === \get_class($this->origin)
+               || is_subclass_of($metadata->type()->name(), \get_class($this->origin))
+             );
     }
 
     /**

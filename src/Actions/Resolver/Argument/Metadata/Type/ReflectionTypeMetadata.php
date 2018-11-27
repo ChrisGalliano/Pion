@@ -42,7 +42,7 @@
 
     public function isObject(): bool
     {
-      return \is_object($this->reflectionType->getName());
+      return \class_exists($this->reflectionType->getName());
     }
 
     public function name(): string
