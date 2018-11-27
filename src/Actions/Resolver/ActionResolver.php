@@ -52,7 +52,7 @@
             }
           }
 
-          if (!$isResolved || $argumentReflection->isDefaultValueAvailable()) {
+          if (!$isResolved && $argumentReflection->isDefaultValueAvailable()) {
             $value = $argumentReflection->getDefaultValue();
           }
 
