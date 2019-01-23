@@ -36,8 +36,13 @@
         $this->sections = [];
       }
 
+      $renderedResources = [];
       foreach ($resources as $resource) {
-        print $resource->render();
+        $rendered = $resource->render();
+        $renderedResources[$rendered] = $rendered;
+      }
+      foreach ($renderedResources as $resource) {
+        print $resource;
       }
     }
   }
