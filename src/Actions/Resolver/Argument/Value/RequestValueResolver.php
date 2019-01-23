@@ -35,7 +35,7 @@
     public function value(ArgumentMetadataInterface $metadata)
     {
       $value = $this->getValue($metadata, $this->request->get());
-      if ($value !== null && $this->request->method()->type() === RequestMethodInterface::POST) {
+      if ($value === null && $this->request->method()->type() === RequestMethodInterface::POST) {
         $value = $this->getValue($metadata, $this->request->post());
       }
       return $value;
