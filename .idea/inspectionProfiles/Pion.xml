@@ -123,6 +123,7 @@
     <inspection_tool class="LoopWhichDoesNotLoopInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="LowerAccessLevelInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="MessDetectorValidationInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="MethodShouldBeFinalInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="MisorderedModifiersInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="MissingArrayInitializationInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="MissingOrEmptyGroupStatementInspection" enabled="true" level="ERROR" enabled_by_default="true" />
@@ -155,7 +156,9 @@
     <inspection_tool class="PhpAssignmentReplaceableWithOperatorAssignmentInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpAssignmentReplaceableWithPrefixExpressionInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpCSFixerValidationInspection" enabled="true" level="ERROR" enabled_by_default="true" />
-    <inspection_tool class="PhpCSValidationInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="PhpCSValidationInspection" enabled="true" level="ERROR" enabled_by_default="true">
+      <option name="EXTENSIONS" value="php,js,css,inc" />
+    </inspection_tool>
     <inspection_tool class="PhpClassNamingConventionInspection" enabled="true" level="ERROR" enabled_by_default="true">
       <option name="m_regex" value="[A-Z][A-Za-z]*" />
       <option name="m_minLength" value="3" />
@@ -239,7 +242,6 @@
     <inspection_tool class="PhpUndefinedGotoLabelInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpUndefinedMethodInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpUndefinedNamespaceInspection" enabled="true" level="ERROR" enabled_by_default="true" />
-    <inspection_tool class="PhpUndefinedVariableInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpUnhandledExceptionInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpUnitCoversFunctionWithoutScopeResolutionOperatorInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpUnitMissingTargetForTestInspection" enabled="true" level="ERROR" enabled_by_default="true" />
