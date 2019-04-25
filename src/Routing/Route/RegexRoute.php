@@ -17,10 +17,16 @@
      */
     private $actionClass;
 
-    public function __construct(string $path, string $actionClass)
+    /**
+     * @var string
+     */
+    private $pattern;
+
+    public function __construct(string $path, string $actionClass, string $pattern)
     {
       $this->path = $path;
       $this->actionClass = $actionClass;
+      $this->pattern = $pattern;
     }
 
     public function path(): string
@@ -30,10 +36,7 @@
 
     public function isSupported(RequestInterface $request): bool
     {
-      return (bool)preg_match(
-        '!^' . preg_quote($this->path, '!') . '$!',
-        $request->uri()->getPath()
-      );
+      return (bool)preg_match($this->pattern, $request->uri()->getPath());
     }
 
     public function actionClass(): string

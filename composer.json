@@ -1,5 +1,6 @@
 {
   "name": "chrisgalliano/pion",
+  "version": "1.0.0",
   "description": "Light PHP Framework",
   "minimum-stability": "dev",
   "license": "MIT",
