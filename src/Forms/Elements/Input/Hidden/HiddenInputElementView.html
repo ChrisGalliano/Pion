@@ -1,0 +1,11 @@
+<?
+  declare(strict_types=1);
+
+  assert(is_string($name));
+  assert(is_string($value));
+?>
+<div class="hidden-element form-element">
+    <div class="element-content">
+        <input type="hidden" name="<?= $name ?>" value="<?= $value ?>">
+    </div>
+</div>

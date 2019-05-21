@@ -1,0 +1,19 @@
+<?
+  declare(strict_types=1);
+
+  use Pion\Forms\Elements\Input\Checkbox\CheckboxElement;
+  use Pion\Templating\Engine\EngineInterface;
+
+  assert(is_string($errors));
+  assert(is_array($checkboxes));
+  assert($engine instanceof EngineInterface);
+?>
+<div class="list-of-checkboxes-element form-element">
+  <?= $errors ?>
+    <div class="element-content">
+      <? foreach ($checkboxes as $checkbox) { ?>
+        <? assert($checkbox instanceof CheckboxElement) ?>
+        <?= $checkbox->render($engine) ?>
+      <? } ?>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<?
+  declare(strict_types=1);
+
+  assert(is_string($errors));
+  assert(is_string($name));
+  assert(is_string($value));
+?>
+<div class="text-input-element form-element">
+  <?= $errors ?>
+    <div class="element-content">
+        <input type="text" name="<?= $name ?>" value="<?= $value ?>">
+    </div>
+</div>

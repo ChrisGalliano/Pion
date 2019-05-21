@@ -1,0 +1,17 @@
+<?
+  declare(strict_types=1);
+
+  use Pion\Forms\Elements\Multiple\Options\OptionInterface;
+
+  assert(is_string($name));
+  assert(is_bool($checked));
+  assert($option instanceof OptionInterface);
+  $elementId = 'form-radio-el-' . $name;
+?>
+<div class="radio-element form-element">
+    <div class="element-content">
+        <input type="radio" name="<?= $name ?>" id="<?= $elementId ?>" <?= $checked ? 'checked' : '' ?>
+               value="<?= $option->value() ?>">
+        <label for="#<?= $elementId ?>"><?= $option->label() ?></label>
+    </div>
+</div>
