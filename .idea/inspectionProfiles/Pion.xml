@@ -110,6 +110,7 @@
     </inspection_tool>
     <inspection_tool class="GetClassUsageInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="GetTypeMissUseInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="HtmlFormInputWithoutLabel" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="IfReturnReturnSimplificationInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="InArrayMissUseInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="IncrementDecrementOperationEquivalentInspection" enabled="true" level="ERROR" enabled_by_default="true" />
@@ -159,7 +160,7 @@
     <inspection_tool class="PhpCSValidationInspection" enabled="true" level="ERROR" enabled_by_default="true">
       <option name="EXTENSIONS" value="php,js,css,inc" />
     </inspection_tool>
-    <inspection_tool class="PhpClassNamingConventionInspection" enabled="true" level="ERROR" enabled_by_default="true">
+    <inspection_tool class="PhpClassNamingConventionInspection" enabled="false" level="ERROR" enabled_by_default="false">
       <option name="m_regex" value="[A-Z][A-Za-z]*" />
       <option name="m_minLength" value="3" />
       <option name="m_maxLength" value="30" />
@@ -201,7 +202,7 @@
     <inspection_tool class="PhpLoopCanBeConvertedToArrayFillInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpLoopCanBeConvertedToArrayFilterInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpLoopCanBeConvertedToArrayMapInspection" enabled="true" level="ERROR" enabled_by_default="true" />
-    <inspection_tool class="PhpMethodNamingConventionInspection" enabled="true" level="ERROR" enabled_by_default="true">
+    <inspection_tool class="PhpMethodNamingConventionInspection" enabled="false" level="ERROR" enabled_by_default="false">
       <option name="m_regex" value="[a-z][A-Za-z]*" />
       <option name="m_minLength" value="3" />
     </inspection_tool>
@@ -242,6 +243,9 @@
     <inspection_tool class="PhpUndefinedGotoLabelInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpUndefinedMethodInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpUndefinedNamespaceInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="PhpUndefinedVariableInspection" enabled="true" level="ERROR" enabled_by_default="true">
+      <scope name="Views" level="ERROR" enabled="false" />
+    </inspection_tool>
     <inspection_tool class="PhpUnhandledExceptionInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpUnitCoversFunctionWithoutScopeResolutionOperatorInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpUnitMissingTargetForTestInspection" enabled="true" level="ERROR" enabled_by_default="true" />
@@ -326,7 +330,7 @@
       </option>
     </inspection_tool>
     <inspection_tool class="SelfClassReferencingInspection" enabled="true" level="ERROR" enabled_by_default="true" />
-    <inspection_tool class="SenselessCommaInArrayDefinitionInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="SenselessCommaInArrayDefinitionInspection" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="SenselessMethodDuplicationInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="SenselessProxyMethodInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="SenselessTernaryOperatorInspection" enabled="true" level="ERROR" enabled_by_default="true" />
