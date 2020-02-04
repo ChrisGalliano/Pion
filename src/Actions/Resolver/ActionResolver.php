@@ -60,11 +60,21 @@
             throw new UnresolvedArgumentException($argumentReflection->getName());
           }
 
-          $compareType = \is_object($value) ? \get_class($value) : \gettype($value);
-          if ($value !== null && $argumentMetadata->type()->name() !== $compareType) {
+          $valueType = \is_object($value) ? \get_class($value) : \gettype($value);
+          if (
+            $value !== null
+            && $argumentMetadata->type()->name() !== $valueType
+            && (
+              \is_object($value)
+              && !is_subclass_of(
+                $valueType,
+                $argumentMetadata->type()->name()
+              )
+            )
+          ) {
             throw new InvalidArgumentTypeException(
               $argumentMetadata->type()->name(),
-              \gettype($value)
+              $valueType
             );
           }
           $arguments[] = $value;
