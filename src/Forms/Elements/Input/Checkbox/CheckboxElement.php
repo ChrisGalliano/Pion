@@ -19,6 +19,11 @@
   class CheckboxElement implements FormElementInterface, BooleanInterface
   {
     /**
+     * @var string
+     */
+    private $name;
+
+    /**
      * @var OptionInterface
      */
     private $option;
@@ -26,7 +31,7 @@
     /**
      * @var bool
      */
-    private $value = false;
+    private $checked = false;
 
     /**
      * @var BooleanValidatorInterface
@@ -38,8 +43,9 @@
      */
     private $validationResult;
 
-    public function __construct(OptionInterface $option, BooleanValidatorInterface $validator)
+    public function __construct(string $name, OptionInterface $option, BooleanValidatorInterface $validator)
     {
+      $this->name = $name;
       $this->option = $option;
       $this->validator = $validator;
       $this->validationResult = new ValidationResult();
@@ -47,12 +53,12 @@
 
     public function name(): string
     {
-      return $this->option->value();
+      return $this->name;
     }
 
     public function handle(ParametersInterface $parameters): ElementValidationResultsCollectionInterface
     {
-      $this->value = $parameters->has($this->name());
+      $this->checked = $parameters->has($this->name());
       $this->validationResult = $this->validator->validate($this);
       return new ElementValidationResultsCollection(
         new ElementValidationResult($this, $this->validationResult)
@@ -74,6 +80,16 @@
 
     public function bool(): bool
     {
-      return $this->value;
+      return $this->checked;
+    }
+
+    public function option(): OptionInterface
+    {
+      return $this->option;
+    }
+
+    public function setChecked(bool $checked): void
+    {
+      $this->checked = $checked;
     }
   }

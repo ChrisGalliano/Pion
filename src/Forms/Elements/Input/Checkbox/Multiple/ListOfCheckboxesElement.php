@@ -45,8 +45,8 @@
       string $name, ListOfOptionsInterface $options, ListOfBooleansValidatorInterface $validator
     ) {
       $this->name = $name;
-      foreach ($options->all() as $option) {
-        $this->checkboxes[] = new CheckboxElement($option, new DummyBooleanValidator());
+      foreach ($options->all() as $index => $option) {
+        $this->checkboxes[] = new CheckboxElement($this->name . "_$index", $option, new DummyBooleanValidator());
       }
       $this->validator = $validator;
       $this->validationResult = new ValidationResult();
