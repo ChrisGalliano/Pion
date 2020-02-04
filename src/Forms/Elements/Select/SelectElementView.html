@@ -1,18 +1,17 @@
 <?
   declare(strict_types=1);
-  use Pion\Forms\Elements\Multiple\Options\OptionInterface;
+  use Pion\Forms\Elements\Multiple\Options\ListOfOptionsInterface;
 
   assert(is_string($errors));
   assert(is_string($name));
-  assert(is_array($options));
+  assert($options instanceof ListOfOptionsInterface);
   assert(is_string($value));
 ?>
 <div class="select-element form-element">
   <?= $errors ?>
     <div class="element-content">
         <select name="<?= $name ?>">
-          <? foreach ($options as $option) { ?>
-            <? assert($option instanceof OptionInterface) ?>
+          <? foreach ($options->all() as $option) { ?>
               <option value="<?= $option->value() ?>"
                 <?= $option->value() === $value ? 'selected' : '' ?>><?= $option->label() ?></option>
           <? } ?>
