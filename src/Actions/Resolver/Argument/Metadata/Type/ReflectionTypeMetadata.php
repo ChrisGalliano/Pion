@@ -1,4 +1,4 @@
-<?
+<? /** @noinspection PhpPossiblePolymorphicInvocationInspection */
   declare(strict_types=1);
 
   namespace Pion\Actions\Resolver\Argument\Metadata\Type;
@@ -42,7 +42,7 @@
 
     public function isObject(): bool
     {
-      return \class_exists($this->reflectionType->getName());
+      return \class_exists($this->reflectionType->getName()) || \interface_exists($this->reflectionType->getName());
     }
 
     public function name(): string
