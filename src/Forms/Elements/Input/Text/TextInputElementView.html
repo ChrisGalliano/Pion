@@ -8,6 +8,6 @@
 <div class="text-input-element form-element">
   <?= $errors ?>
     <div class="element-content">
-        <input type="text" name="<?= $name ?>" value="<?= $value ?>">
+        <input type="text" name="<?= $name ?>" value="<?= htmlspecialchars($value, ENT_QUOTES) ?>">
     </div>
 </div>
