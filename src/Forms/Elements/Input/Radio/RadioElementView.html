@@ -6,7 +6,9 @@
   assert(is_string($name));
   assert(is_bool($checked));
   assert($option instanceof OptionInterface);
-  $elementId = 'form-radio-el-' . $name;
+  # @todo use uuid
+  /** @noinspection PhpUnhandledExceptionInspection */
+  $elementId = 'form-radio-el-' . $name . microtime(true) . random_int(PHP_INT_MIN, PHP_INT_MAX);
 ?>
 <div class="radio-element form-element">
     <div class="element-content">

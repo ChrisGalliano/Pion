@@ -41,10 +41,10 @@
 
     public function __construct(string $name, ListOfOptionsInterface $options, StringValidatorInterface $validator)
     {
+      // @todo is unable to mark one radio as selected
       $this->name = $name;
-      $i = 0;
       foreach ($options->all() as $option) {
-        $this->radios[] = new RadioElement($name . $i++, $option);
+        $this->radios[] = new RadioElement($name, $option);
       }
       $this->validator = $validator;
       $this->validationResult = new ValidationResult();
