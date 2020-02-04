@@ -25,7 +25,7 @@
       foreach ($collection->all() as $result) {
         $results[$result->element()->name()] = $result;
       }
-      return new self(...$results);
+      return new self(...array_values($results));
     }
 
     public function isValid(): bool
