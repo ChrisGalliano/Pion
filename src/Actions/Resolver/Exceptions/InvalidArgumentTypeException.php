@@ -9,7 +9,7 @@
     {
       parent::__construct(
         "Invalid argument resolving result expected type {$expected},
-      type {$resolved} was resolver"
+      type {$resolved} was resolved"
       );
     }
   }
