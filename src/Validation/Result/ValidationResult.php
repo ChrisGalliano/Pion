@@ -16,7 +16,7 @@
 
     public function isValid(): bool
     {
-      return \count($this->errors()) > 0;
+      return \count($this->errors()) === 0;
     }
 
     public  function addError(string $error) : self {
