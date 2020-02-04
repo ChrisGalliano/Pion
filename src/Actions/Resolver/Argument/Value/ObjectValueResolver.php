@@ -12,7 +12,7 @@
      */
     private $origin;
 
-    public function __construct($origin)
+    public function __construct(object $origin)
     {
       $this->origin = $origin;
     }
@@ -22,14 +22,11 @@
       return $metadata->type()->isObject()
              && (
                $metadata->type()->name() === \get_class($this->origin)
-               || is_subclass_of($metadata->type()->name(), \get_class($this->origin))
+               || is_subclass_of(\get_class($this->origin), $metadata->type()->name())
              );
     }
 
-    /**
-     * @return mixed
-     */
-    public function value(ArgumentMetadataInterface $metadata)
+    public function value(ArgumentMetadataInterface $metadata) : object
     {
       return $this->origin;
     }
