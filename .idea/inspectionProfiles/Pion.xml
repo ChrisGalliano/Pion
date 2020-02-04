@@ -22,6 +22,7 @@
     <inspection_tool class="CaseInsensitiveStringFunctionsMissUseInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="ClassConstantCanBeUsedInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="ClassMethodNameMatchesFieldNameInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ClassNameCollisionInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ClassOverridesFieldOfSuperClassInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="ClassReImplementsParentInterfaceInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="CompactCanBeUsedInspection" enabled="true" level="ERROR" enabled_by_default="true" />
@@ -220,7 +221,7 @@
     <inspection_tool class="PhpNonStrictObjectEqualityInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpOptionalBeforeRequiredParametersInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="PhpParamsInspection" enabled="true" level="ERROR" enabled_by_default="true" />
-    <inspection_tool class="PhpPropertyNamingConventionInspection" enabled="true" level="ERROR" enabled_by_default="true">
+    <inspection_tool class="PhpPropertyNamingConventionInspection" enabled="false" level="ERROR" enabled_by_default="false">
       <option name="m_regex" value="[a-z][A-Za-z]*" />
       <option name="m_maxLength" value="25" />
     </inspection_tool>
