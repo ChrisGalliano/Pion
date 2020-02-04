@@ -66,7 +66,7 @@
     public function render(EngineInterface $engine): string
     {
       return $engine->render(
-        __DIR__ . '/TextInputElementView.html',
+        __DIR__ . '/TextareaElementView.html',
         [
           'errors' => (new ErrorsWidget($this->validationResult))->render($engine),
           'name'   => $this->name(),
