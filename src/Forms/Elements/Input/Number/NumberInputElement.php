@@ -50,7 +50,7 @@
 
     public function handle(ParametersInterface $parameters): ElementValidationResultsCollectionInterface
     {
-      $this->setValue($parameters->has($this->name()) ? $parameters->require($this->name()) : 0.0);
+      $this->setValue($parameters->has($this->name()) ? (float)$parameters->require($this->name()) : 0.0);
       $this->validationResult = $this->validator->validate($this);
       return new ElementValidationResultsCollection(
         new ElementValidationResult($this, $this->validationResult)
