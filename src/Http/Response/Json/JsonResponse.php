@@ -13,12 +13,12 @@
 
   class JsonResponse
   {
-
     /**
      * @var mixed[]
      */
-    private $data;
+    private array $data;
 
+    private HeadersCollection $headers;
 
     /**
      * @param mixed[] $data
@@ -26,23 +26,24 @@
     public function __construct(array $data)
     {
       $this->data = $data;
+      $this->headers = new HeadersCollection(new ContentTypeJsonHeader());
     }
 
-
-    public function status() : StatusInterface
+    public function status(): StatusInterface
     {
       return new StatusOK();
     }
 
-
-    public function headers() : HeadersCollectionInterface
+    public function headers(): HeadersCollectionInterface
     {
-      return new HeadersCollection(new ContentTypeJsonHeader());
+      return $this->headers;
     }
 
-
-    public function stream() : StreamInterface
+    /**
+     * @throws \JsonException
+     */
+    public function stream(): StreamInterface
     {
-      return new Stream(\json_encode($this->data));
+      return new Stream(\json_encode($this->data, JSON_THROW_ON_ERROR));
     }
   }
