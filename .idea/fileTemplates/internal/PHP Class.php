@@ -1,13 +1,11 @@
-<?
-declare(strict_types=1);
-
+<?php
+declare(strict_types = 1);
 #if (${NAMESPACE})
 
 namespace ${NAMESPACE};
-
 #end
 
-#if($NAME.endsWith("Interface"))
+#if ($NAME.endsWith("Interface"))
 #parse("PhpInterface")
 #elseif($NAME.endsWith("Exception"))
 #parse("Exception")
