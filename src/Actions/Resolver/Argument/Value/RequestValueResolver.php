@@ -34,14 +34,14 @@
 
     public function value(ArgumentMetadataInterface $metadata)
     {
-      $value = $this->getValue($metadata, $this->request->get());
+      $value = $this->resolveValue($metadata, $this->request->get());
       if ($value === null && $this->request->method()->type() === RequestMethodInterface::POST) {
-        $value = $this->getValue($metadata, $this->request->post());
+        $value = $this->resolveValue($metadata, $this->request->post());
       }
       return $value;
     }
 
-    private function getValue(ArgumentMetadataInterface $metadata, ParametersInterface $parameters)
+    private function resolveValue(ArgumentMetadataInterface $metadata, ParametersInterface $parameters)
     {
       $value = null;
       if ($parameters->has($metadata->name())) {
