@@ -4,44 +4,35 @@
   namespace Pion\Application;
 
   use Pion\Actions\Resolver\ActionResolver;
+  use Pion\Actions\Resolver\Argument\Metadata\Exceptions\UnknownParameterTypeException;
+  use Pion\Actions\Resolver\Exceptions\InvalidActionClassException;
+  use Pion\Actions\Resolver\Exceptions\InvalidArgumentTypeException;
+  use Pion\Actions\Resolver\Exceptions\UnresolvedArgumentException;
   use Pion\Application\Exceptions\UndefinedRouteException;
   use Pion\Http\Request\RequestInterface;
   use Pion\Http\Response\ResponseInterface;
   use Pion\Routing\RoutingInterface;
-  use Pion\Templating\Engine\Engine;
 
   class Application implements ApplicationInterface
   {
-    /**
-     * @var \Pion\Routing\RoutingInterface
-     */
-    private $routing;
+    private RoutingInterface $routing;
 
-    /**
-     * @var \Pion\Actions\Resolver\ActionResolver
-     */
-    private $actionResolver;
+    private ActionResolver $actionResolver;
 
-    /**
-     * @var \Pion\Templating\Engine\Engine
-     */
-    private $engine;
-
-    public function __construct(RoutingInterface $routing, ActionResolver $actionResolver, Engine $engine)
+    public function __construct(RoutingInterface $routing, ActionResolver $actionResolver)
     {
       $this->routing = $routing;
       $this->actionResolver = $actionResolver;
-      $this->engine = $engine;
     }
 
     /**
-     * @return \Pion\Http\Response\ResponseInterface
+     * @return ResponseInterface
      * @throws \ReflectionException
-     * @throws \Pion\Actions\Resolver\Argument\Metadata\Exceptions\UnknownParameterTypeException
-     * @throws \Pion\Actions\Resolver\Exceptions\InvalidActionClassException
-     * @throws \Pion\Actions\Resolver\Exceptions\InvalidArgumentTypeException
-     * @throws \Pion\Actions\Resolver\Exceptions\UnresolvedArgumentException
-     * @throws \Pion\Application\Exceptions\UndefinedRouteException
+     * @throws UnknownParameterTypeException
+     * @throws InvalidActionClassException
+     * @throws InvalidArgumentTypeException
+     * @throws UnresolvedArgumentException
+     * @throws UndefinedRouteException
      */
     public function dispatch(RequestInterface $request): ResponseInterface
     {
@@ -49,6 +40,6 @@
       if ($route === null) {
         throw new UndefinedRouteException($request);
       }
-      return $this->actionResolver->resolve($route->actionClass())->render($this->engine);
+      return $this->actionResolver->resolve($route->actionClass())->render();
     }
   }
