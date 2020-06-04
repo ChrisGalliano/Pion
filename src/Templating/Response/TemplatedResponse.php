@@ -3,8 +3,8 @@
 
   namespace Pion\Templating\Response;
 
-  use Pion\Http\Response\Headers\Headers;
-  use Pion\Http\Response\Headers\HeadersInterface;
+  use Pion\Http\Response\Headers\HeadersCollection;
+  use Pion\Http\Response\Headers\HeadersCollectionInterface;
   use Pion\Http\Response\ResponseInterface;
   use Pion\Http\Response\Status\StatusInterface;
   use Pion\Http\Response\Status\StatusOK;
@@ -26,16 +26,16 @@
     private $engine;
 
     /**
-     * @var HeadersInterface
+     * @var HeadersCollectionInterface
      */
     private $headers;
 
     public function __construct(
-      RenderableInterface $renderable, EngineInterface $engine, HeadersInterface $headers = null
+      RenderableInterface $renderable, EngineInterface $engine, HeadersCollectionInterface $headers = null
     ) {
       $this->renderable = $renderable;
       $this->engine = $engine;
-      $this->headers = $headers ?: new Headers();
+      $this->headers = $headers ?: new HeadersCollection();
     }
 
     public function status(): StatusInterface
@@ -43,7 +43,7 @@
       return new StatusOK();
     }
 
-    public function headers(): HeadersInterface
+    public function headers(): HeadersCollectionInterface
     {
       return $this->headers;
     }

@@ -3,8 +3,8 @@
 
   namespace Pion\Http\Response;
 
-  use Pion\Http\Response\Headers\Headers;
-  use Pion\Http\Response\Headers\HeadersInterface;
+  use Pion\Http\Response\Headers\HeadersCollection;
+  use Pion\Http\Response\Headers\HeadersCollectionInterface;
   use Pion\Http\Response\Status\StatusInterface;
   use Pion\Http\Response\Status\StatusOK;
   use Pion\Http\Response\Stream\Stream;
@@ -17,9 +17,9 @@
       return new StatusOK();
     }
 
-    public function headers(): HeadersInterface
+    public function headers(): HeadersCollectionInterface
     {
-      return new Headers();
+      return new HeadersCollection();
     }
 
     public function stream(): StreamInterface

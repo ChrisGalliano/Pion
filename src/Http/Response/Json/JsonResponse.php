@@ -3,8 +3,8 @@
 
   namespace Pion\Http\Response\Json;
 
-  use Pion\Http\Response\Headers\Headers;
-  use Pion\Http\Response\Headers\HeadersInterface;
+  use Pion\Http\Response\Headers\HeadersCollection;
+  use Pion\Http\Response\Headers\HeadersCollectionInterface;
   use Pion\Http\Response\Json\Headers\ContentTypeJsonHeader;
   use Pion\Http\Response\Status\StatusInterface;
   use Pion\Http\Response\Status\StatusOK;
@@ -35,9 +35,9 @@
     }
 
 
-    public function headers() : HeadersInterface
+    public function headers() : HeadersCollectionInterface
     {
-      return new Headers(new ContentTypeJsonHeader());
+      return new HeadersCollection(new ContentTypeJsonHeader());
     }
 
 

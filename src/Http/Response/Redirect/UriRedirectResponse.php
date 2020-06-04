@@ -3,8 +3,8 @@
 
   namespace Pion\Http\Response\Redirect;
 
-  use Pion\Http\Response\Headers\Headers;
-  use Pion\Http\Response\Headers\HeadersInterface;
+  use Pion\Http\Response\Headers\HeadersCollection;
+  use Pion\Http\Response\Headers\HeadersCollectionInterface;
   use Pion\Http\Response\Redirect\Headers\LocationHeader;
   use Pion\Http\Response\ResponseInterface;
   use Pion\Http\Response\Status\PredefinedStatus;
@@ -35,9 +35,9 @@
       return new PredefinedStatus($this->statusCode, '');
     }
 
-    public function headers(): HeadersInterface
+    public function headers(): HeadersCollectionInterface
     {
-      return new Headers(new LocationHeader($this->uri));
+      return new HeadersCollection(new LocationHeader($this->uri));
     }
 
     public function stream(): StreamInterface

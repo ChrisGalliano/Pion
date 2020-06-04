@@ -3,10 +3,12 @@
 
   namespace Pion\Http\Response\Headers;
 
-  interface HeadersInterface
+  interface HeadersCollectionInterface
   {
     /**
-     * @return \Pion\Http\Response\Headers\HeaderInterface[]
+     * @return HeaderInterface[]
      */
     public function all(): array;
+
+    public function add(HeaderInterface $header): self;
   }
