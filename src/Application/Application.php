@@ -55,7 +55,7 @@
       if (!\is_callable($action)) {
         throw new InvalidActionClassException($actionClass);
       }
-      $arguments = $this->actionResolver->resolve($actionClass);
+      $arguments = $this->actionResolver->resolve($action);
       $result = $action(...$arguments);
       if (!($result instanceof ResponseInterface)) {
         throw new InvalidActionResponseException($actionClass);
