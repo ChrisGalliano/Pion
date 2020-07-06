@@ -3,6 +3,7 @@
 
   namespace Pion\Routing\Route;
 
+  use Pion\Actions\ActionInterface;
   use Pion\Http\Request\RequestInterface;
 
   interface RouteInterface
@@ -11,5 +12,5 @@
 
     public function isSupported(RequestInterface $request): bool;
 
-    public function actionClass(): string;
+    public function action(): ActionInterface;
   }

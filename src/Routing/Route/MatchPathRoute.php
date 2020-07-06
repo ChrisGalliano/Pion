@@ -4,13 +4,15 @@
 
   namespace Pion\Routing\Route;
 
+  use Pion\Actions\ActionInterface;
+
   class MatchPathRoute extends RegexRoute
   {
-    public function __construct(string $path, string $actionClass)
+    public function __construct(string $path, ActionInterface $action)
     {
       parent::__construct(
         $path,
-        $actionClass,
+        $action,
         '!^' . preg_quote($path, '!') . '$!'
       );
     }

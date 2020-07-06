@@ -3,6 +3,7 @@
 
   namespace Pion\Routing\Route;
 
+  use Pion\Actions\ActionInterface;
   use Pion\Http\Request\RequestInterface;
 
   class RegexRoute implements RouteInterface
@@ -10,23 +11,23 @@
     /**
      * @var string
      */
-    private $path;
+    private string $path;
+
+    /**
+     * @var ActionInterface
+     */
+    private ActionInterface $action;
 
     /**
      * @var string
      */
-    private $actionClass;
+    private string $pattern;
 
-    /**
-     * @var string
-     */
-    private $pattern;
-
-    public function __construct(string $path, string $actionClass, string $pattern)
+    public function __construct(string $path, ActionInterface $action, string $pattern)
     {
       $this->path = $path;
-      $this->actionClass = $actionClass;
       $this->pattern = $pattern;
+      $this->action = $action;
     }
 
     public function path(): string
@@ -39,8 +40,8 @@
       return (bool)preg_match($this->pattern, $request->uri()->getPath());
     }
 
-    public function actionClass(): string
+    public function action(): ActionInterface
     {
-      return $this->actionClass;
+      return $this->action;
     }
   }

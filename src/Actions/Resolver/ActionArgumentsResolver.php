@@ -7,9 +7,9 @@
   use Pion\Actions\Resolver\Argument\Metadata\Exceptions\UnknownParameterTypeException;
   use Pion\Actions\Resolver\Argument\Metadata\ReflectionArgumentMetadata;
   use Pion\Actions\Resolver\Argument\Value\ValueResolverInterface;
-  use Pion\Actions\Resolver\Exceptions\InvalidActionClassException;
   use Pion\Actions\Resolver\Exceptions\InvalidArgumentTypeException;
   use Pion\Actions\Resolver\Exceptions\UnresolvedArgumentException;
+  use Pion\Application\Exceptions\ActionHaveToBeCallableException;
 
   class ActionArgumentsResolver implements ActionArgumentsResolverInterface
   {
@@ -25,7 +25,7 @@
 
     /**
      * @return mixed[]
-     * @throws InvalidActionClassException
+     * @throws ActionHaveToBeCallableException
      * @throws UnknownParameterTypeException
      * @throws InvalidArgumentTypeException
      * @throws UnresolvedArgumentException
@@ -35,7 +35,7 @@
     {
       $invoke = (new \ReflectionClass($action))->getMethod("__invoke");
       if ($invoke === null) {
-        throw new InvalidActionClassException(\get_class($action));
+        throw new ActionHaveToBeCallableException($action);
       }
       $arguments = [];
       foreach ($invoke->getParameters() as $argumentReflection) {
