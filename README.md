@@ -8,9 +8,10 @@ Pion - легковесный PHP Framework.
 
 
 ## Examples
-- [Pion Example](https://github.com/ChrisGalliano/PionExample) - Pion + Doctrine + Symfony Console + Docker
+- [Pion + Doctrine + Symfony Console + Docker](https://github.com/ChrisGalliano/PionExample)
 
-### Pion principles
+
+## Pion principles
 **1. Minimalism**<br/>
 Pion предоставляет только базовый набор инструментов. Его задача -  получить пользовательский request, обработать его и вернуть ответ.<br/>
 Такой подход проектирования использован умышленно, чтобы защитить ядро фреймворка от тесной интеграции c "лишними" компонентами. Вы без проблем можете использовать ваш любимый templating/ORM/IoC-container/etc. :smile:
